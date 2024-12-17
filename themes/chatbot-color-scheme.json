@@ -1,0 +1,53 @@
+{
+    "name": "Chatbot Color Theme",
+    "type": "dark",
+    "colors": {
+      "editor.foreground": "#FFFFFF",
+      "editor.background": "#1E1E1E"
+    },
+    "tokenColors": [
+      {
+        "scope": "question.name",
+        "settings": {
+          "foreground": "#FFD700" 
+        }
+      },
+      {
+        "scope": "keyword.save.answer.chatbot",
+        "settings": {
+          "foreground": "#FFD700"
+        }
+      },
+      {
+        "scope": "keyword.option.chatbot",
+        "settings": {
+          "foreground": "#1E90FF"
+        }
+      },
+      {
+        "scope": "keyword.keywords.chatbot",
+        "settings": {
+          "foreground": "#1E90FF"
+        }
+      },
+      {
+        "scope": "keyword.next.question.chatbot",
+        "settings": {
+            "foreground": "#1E90FF"
+        }
+      },
+      {
+        "scope": "variable.ref.chatbot",
+        "settings": {
+          "foreground": "#00FF00",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "keyword.wildcard.chatbot",
+        "settings": {
+            "foreground": "#FF0000"
+        }
+      }
+    ]
+  }

@@ -1,0 +1,81 @@
+{
+  "name": "kpi-chatbot-dsl",
+  "displayName": "KPI_Chatbot_DSL",
+  "description": "Extension to support development in chatbot DSL",
+  "version": "0.0.1",
+  "main": "./out/client/src/extensions.js",
+  "activationEvents": ["onLanguage:chatbot"],
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Chatbot Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/chatbot-color-scheme.json"
+      }
+    ],
+    "languages": [
+      {
+        "id": "chatbot",
+        "aliases": [
+          "chatbot",
+          "chatbot"
+        ],
+        "extensions": [
+          ".chatbot",
+          ".chatbotS"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "chatbot",
+        "scopeName": "source.chatbot",
+        "path": "./syntaxes/chatbot.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.compileChatbot",
+        "title": "Skompiluje chatbot subor do webovej aplikacie",
+        "icon": "$(run)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "extension.compileChatbot",
+          "when": "resourceLangId == chatbot",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "files": [
+    "out/**",
+    "syntaxes/**",
+    "themes/**"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12",
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/vscode": "^1.95.0",
+    "typescript": "^5.7.2",
+    "vscode": "^1.1.37"
+  }
+}

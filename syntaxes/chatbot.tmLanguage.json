@@ -1,0 +1,73 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "chatbot",
+	"scopeName": "source.chatbot",
+	"patterns": [
+		{ "include": "#startMessage" },
+		{ "include": "#endMessage" },
+		{ "include": "#question" }
+  	],
+  	"repository": {
+		"startMessage": {
+			"name": "meta.start.message.chatbot",
+			"match": "\\A.*"
+		},
+		"endMessage": {
+			"patterns": [
+				{ "include": "#placeholder" }
+			]
+		},
+    	"question": {
+	  		"name": "question",
+      		"patterns": [
+				{"include": "#questionName"},
+        		{ "include": "#saveAnswer" },
+        		{ "include": "#answer" }
+      		]
+    	},
+		"saveAnswer": {
+			"name": "keyword.save.answer.chatbot",
+			"match": "\\bsaveAnswer\\b"
+		},
+		"answer": {
+			"patterns": [
+				{ "include": "#answerPart" }
+			]
+		},
+		"answerPart": {
+			"patterns": [
+				{
+					"include": "#wildcard"
+				},
+				{
+					"name": "keyword.option.chatbot",
+					"match": "^\\s*option:"
+				},
+				{
+					"name": "keyword.keywords.chatbot",
+					"match": "^\\s*keywords:"
+				},
+				{
+					"name": "keyword.next.question.chatbot",
+					"match": "^\\s*nextQuestion:"
+				}
+			]
+		},
+		"placeholder": {
+			"patterns": [
+				{
+					"name": "variable.ref.chatbot",
+					"match": "\\{[a-zA-Z0-9:.,!?+áéíóúäôčďľňřšťžýÁÉÍÓÚÄÔČĎĽŇŘŠŤŽÝ]+\\}"
+				}
+			]
+		},
+		"wildcard": {
+			"name": "keyword.wildcard.chatbot",
+			"match": "\\s\\*$"
+		},
+		"questionName": {
+			"name": "question.name",
+			"match": "^[a-zA-Z0-9áéíóúäôčďľňřšťžýÁÉÍÓÚÄÔČĎĽŇŘŠŤŽÝ]+$"
+		}
+	}
+}
