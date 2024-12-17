@@ -8,6 +8,7 @@ VSC Plugin for university project
 - autocompletion
 ![autocompletion gif](/assets/one.gif)
 - syntax highlighting
+
 ![syntax highlighting img](/assets/highlighting.png)
 
 ## Build extension
